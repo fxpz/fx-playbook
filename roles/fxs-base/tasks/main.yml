@@ -1,0 +1,30 @@
+- name: install base software
+  apt:
+    name: "{{ item }}"
+  with_items: fxs_apt_base_packages
+
+- name: install pip
+  easy_install: name=pip
+
+- name: install pip base packages
+  pip:
+    name: "{{ item }}"
+  with_items: fxs_pip_base_packages
+
+- name: create user
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    append: yes
+    groups: "{{ item.groups }}"
+  with_items: fxs_users
+
+- name: create project dir
+  file:
+    path: "/home/{{ fxs_user }}/{{ fxs_user }}"
+    state: directory
+    owner: "{{ fxs_user }}"
+    group: "{{ fxs_user }}"
+    mode: 0755
+
+- n

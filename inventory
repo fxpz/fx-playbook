@@ -1,0 +1,1 @@
+sirio ansible_ssh_host=168.235.145.241 ansible_ssh_user=root
