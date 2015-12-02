@@ -4,3 +4,12 @@
     dest: "/home/{{ fxs_user }}/{{ fxs_user }}"
     repo: "{{ fxs_git_repo }}"
     key_file: /home/{{ fxs_user }}/.ssh/id_rsa
+  tags:
+    - deploy
+
+- name: create virtualenv
+  pip:
+    requirements: "/home/{{ fxs_user }}/{{ fxs_user }}/requirements.txt"
+    virtualenv: "/home/{{ fxs_user }}/{{ fxs_user }}/venv"
+  tags:
+    - deploy

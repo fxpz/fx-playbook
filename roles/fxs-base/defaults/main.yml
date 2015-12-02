@@ -9,5 +9,9 @@ fxs_pip_base_packages:
   - virtualenvwrapper
 
 fxs_apt_base_packages:
-  - 'python-setuptools'
+  - python-setuptools
   - git
+  - libxml2-dev
+  - libxslt-dev
+  - python-dev
+  - lib32z1-dev
