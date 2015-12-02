@@ -1,9 +1,8 @@
-fxs_user: 'fxstreaming'
-
 fxs_users:
   - name: 'fxstreaming'
     uid: 1001
     groups: adm
+    ssh_key: files/ssh_keys/users/id_rsa.pub
 
 fxs_pip_base_packages:
   - virtualenv
